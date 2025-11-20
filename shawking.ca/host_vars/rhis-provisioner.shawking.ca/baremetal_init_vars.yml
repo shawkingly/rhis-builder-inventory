@@ -1,0 +1,67 @@
+---
+
+# Sample vars
+# You can also use this to build your Provisioner node! :-)
+
+ks_path: "ks.cfg"
+oem_dir: "/run/media/ansiblerunner/OEMDRV"
+
+baremetal_hosts:
+  - rhis_role: "ansible"
+    hostname: "ansible25"
+    domain: "shawking.ca"
+    mac: "f4:6b:8c:90:93:F0"
+    ipv4_address: "192.168.52.20"
+    ipv4_netmask: "255.255.252.0"
+    ipv4_gateway: "192.168.52.1"
+    name_server1: "192.168.52.10"
+    name_server2: "8.8.8.8"
+    root_enc_pass: "{{ encrypted_root_pass_vault }}"
+    grub_enc_pass: "{{ encrypted_grub_pass_vault }}"
+    boot_disk: "nvme0n1"
+    root_disk: "nvme0n1"
+    # We will always use compliance layout
+    boot_mb: 1024
+    boot_efi_mb: 2048
+    lv_root_mb: 65536
+    lv_home_mb: 20480
+    lv_tmp_mb: 6144
+    lv_var_tmp_mb: 6144
+    lv_var_log_mb: 6144
+    lv_var_log_audit_mb: 6144
+    lv_var_mb: 1
+    username: "ansiblerunner"
+    user_enc_pass: "{{ encrypted_user_pass_vault }}"
+    user_sudoer_policy: "{{ user_sudoer_policy_vault }}"
+    ssh_pub_key: "{{ ssh_pub_key_vault }}"
+    org: "{{ cdn_organization_id_vault }}"
+    activation_key: "{{ activation_key_vault }}"
+  # - rhis_role: "idm"
+  #   hostname: "idm"
+  #   domain: "shawking.ca"
+  #   mac: "ec:a8:6b:f1:e1:d4"
+  #   ipv4_address: "192.168.52.10"
+  #   ipv4_netmask: "255.255.252.0"
+  #   ipv4_gateway: "192.168.52.1"
+  #   name_server1: "192.168.52.10"
+  #   name_server2: "8.8.8.8"
+  #   boot_disk: "sda"
+  #   root_disk: "sda"
+  #   root_enc_pass: "{{ encrypted_root_pass_vault }}"
+  #   grub_enc_pass: "{{ encrypted_grub_pass_vault }}"
+  #   # We will always use compliance layout
+  #   boot_mb: 1024
+  #   boot_efi_mb: 2048
+  #   lv_root_mb: 65536
+  #   lv_home_mb: 20480
+  #   lv_tmp_mb: 6144
+  #   lv_var_tmp_mb: 6144
+  #   lv_var_log_mb: 6144
+  #   lv_var_log_audit_mb: 6144
+  #   lv_var_mb: 1
+  #   username: "ansiblerunner"
+  #   user_enc_pass: "{{ encrypted_user_pass_vault }}"
+  #   user_sudoer_policy: "{{ user_sudoer_policy_vault }}"
+  #   ssh_pub_key: "{{ ssh_pub_key_vault }}"
+  #   org: "{{ cdn_organization_id_vault }}"
+  #   activation_key: "{{ activation_key_vault }}"

@@ -1,0 +1,89 @@
+---
+
+cdn_organization: "{{ cdn_organization_id_vault }}"
+cdn_activation_key: "{{ activation_key_vault }}"
+
+git_configs:
+  - name: "user.name"
+    scope: "global"
+    value: "cshaw@redhat.com"
+  - name: "user.email"
+    scope: "global"
+    value: "cshaw@redhat.com"
+
+environment_hosts:
+  - name: "rhis-provisioner.shawking.ca"
+    ip: "192.168.64.6"
+  - name: "idm.shawking.ca"
+    ip: "192.168.52.10"
+  - name: "satellite.shawking.ca"
+    ip: "192.168.52.11"
+  - name: "ansible.shawking.ca"
+    ip: "192.168.52.12"
+  - name: "curious-kitty.shawking.ca"
+    ip: "192.168.53.10"
+  - name: "cute-kitty.shawking.ca"
+    ip: "192.168.53.11"
+  - name: "sleepy-kitty.shawking.ca"
+    ip: "192.168.53.12"
+  - name: "lazy-kitty.shawking.ca"
+    ip: "192.168.53.13"
+  - name: "sleepy-kitty.shawking.ca"
+    ip: "192.168.53.14"
+
+ssh_key_cipher: "ecdsa"
+ssh_key_file_path: "~/.ssh/id_ecdsa"
+ssh_public_key_path: "~/.ssh/id_ecdsa.pub"
+
+### ANSIBLE.CFG VARS
+ansible_cfg_log_path: "~/{{ ansible_user_id }}"
+
+rhah_url: "https://cloud.redhat.com/api/automation-hub/"
+
+rpm_dep_list:
+  - ansible-core
+  - git
+  - vim
+  - rhel-system-roles
+  - python3
+  - python3-ipalib
+  - python3-pip
+  - bind-utils
+
+rhis_provisioner_python_modules:
+  - ansible-lint
+
+ansible_galaxy_server_list:
+  - name: "galaxy_root"
+    url: "https://galaxy.ansible.com"
+  - name: "automation_hub"
+    url: "https://cloud.redhat.com/api/automation-hub/"
+    auth_url: "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token"
+    token: "{{ automation_hub_token_vault }}"
+
+rhis_repo_path: "~/rhis/"
+rhis_git_repos:
+  - name: "rhis-builder-idm"
+    url: "https://github.com/shawkingly/rhis-builder-idm.git"
+    force: true
+  - name: "rhis-builder-satellite"
+    url: "https://github.com/shawkingly/rhis-builder-satellite.git"
+    force: true
+  - name: "rhis-builder-aap"
+    url: "https://github.com/shawkingly/rhis-builder-aap.git"
+    force: true
+  - name: "rhis-builder-pipelines"
+    url: "https://github.com/shawkingly/rhis-builder-pipelines.git"
+    force: true
+  # - name: "rhis-builder-nbde"
+  #   url: "https://github.com/shawkingly/rhis-builder-nbde.git"
+  #   force: true
+  - name: "rhis-builder-day-2-ops"
+    url: "https://github.com/shawkingly/rhis-builder-day-2-ops.git"
+    force: true
+  - name: "rhis-builder-ansible-ee"
+    url: "https://github.com/shawkingly/rhis-builder-ansible-ee.git"
+    force: true
+  - name: "rhis-builder-imagebuilder"
+    url: "https://github.com/shawkingly/rhis-builder-imagebuilder.git"
+    force: true

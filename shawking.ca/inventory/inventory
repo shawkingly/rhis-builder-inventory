@@ -1,0 +1,54 @@
+[provisioner]
+rhis-provisioner.shawking.ca
+
+[idm_primary]
+idm.shawking.ca
+
+# [idm_replicas]
+# idmr1.shawking.ca
+# idmr2.shawking.ca
+
+[sat_primary]
+satellite.shawking.ca
+
+# [sat_capsule]
+# capsule1.shawking.ca
+# capsule2.shawking.ca
+
+[platform_installer]
+ansible25.shawking.ca
+
+[aap_controllers]
+ansible25.shawking.ca
+
+# [aap_database]
+
+[aap_hubs]
+ah1.shawking.ca
+
+# [aap_edacontrollers]
+# [aap_execution_nodes]
+# [aap_hop_nodes]
+
+[container_servers]
+containerhost1.shawking.ca
+containerhost2.shawking.ca
+
+[lab_nodes]
+curious-cats.shawking.ca
+hangry-cats.shawking.ca
+silly-cats.shawking.ca
+sleeping-cats.shawking.ca
+aap1.shawking.ca
+
+# [aws_nodes]
+# [azure_nodes]
+# [baremetal_nodes]
+# [gcp_nodes]
+# [kvm_nodes]
+# [ocp_virt_nodes]
+# [openstack_nodes]
+# [vmware_nodes]
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

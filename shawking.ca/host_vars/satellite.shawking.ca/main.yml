@@ -1,0 +1,18 @@
+---
+# This file holds the main satellite level variables.
+use_completion_logic: true
+
+
+satellite_fqdn: satellite.shawking.ca
+satellite_username: "{{ satellite_admin_username_vault }}"
+satellite_password: "{{ satellite_admin_password_vault }}"
+satellite_admin_username: "{{ satellite_admin_username_vault }}"
+satellite_admin_password: "{{ satellite_admin_password_vault }}"
+satellite_admin_email: "admin@shawking.ca"
+satellite_initial_location: "Default Location"
+satellite_initial_organization: "Default Organization"
+satellite_domain: "shawking.ca"
+satellite_url: "https://{{ satellite_fqdn }}/"
+satellite_virtwho_username: "{{ satellite_virtwho_username_vault }}"
+satellite_virtwho_password: "{{ satellite_virtwho_password_vault }}"
+satellite_validate_certs: true

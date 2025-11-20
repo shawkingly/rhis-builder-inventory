@@ -1,0 +1,31 @@
+---
+satellite_subnets:
+  - name: "shawking.ca"
+    description: "shawking.ca network"
+    network_type: "IPv4"
+    network: 192.168.52.0
+    prefix: 22
+    mask: 255.255.252.0
+    gateway: 192.168.52.1
+    dns_primary: 192.168.52.10
+    dns_secondary: 8.8.8.8
+    ipam: "Internal DB"
+    from_ip: 192.168.55.100
+    to_ip: 192.168.55.199
+    boot_mode: "Static"
+    discovery_capsule: "{{ satellite_fqdn }}"
+    tftp_capsule: "{{ satellite_fqdn }}"
+    dns_capsule: "{{ satellite_fqdn }}"
+    template_capsule: "{{ satellite_fqdn }}"
+    parameters:
+      - name: "Parameter1"
+        parameter_type: string
+        value: "theParameter"
+    remote_execution_capsules:
+      - "{{ satellite_fqdn }}"
+    domains:
+      - "{{ satellite_domain }}"
+    locations:
+      - "{{ satellite_location }}"
+    organizations:
+      - "{{ satellite_organization }}"

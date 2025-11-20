@@ -1,0 +1,44 @@
+[provisioner]
+localhost
+
+[idm_primary]
+idm.example.ca
+
+[idm_replicas]
+idmr1.example.ca
+idmr2.example.ca
+
+[sat_primary]
+satellite.example.ca
+
+[sat_capsule]
+capsule1.example.ca
+capsule2.example.ca
+
+[platform_installer]
+aaphub24.example.ca
+
+[aap_controllers]
+aapcontroller24.example.ca
+
+# [aap_database]
+
+[aap_hubs]
+aaphub24.example.ca
+
+# [aap_edacontrollers]
+# [aap_execution_nodes]
+# [aap_hop_nodes]
+
+[container_servers]
+containerhost1.example.ca
+containerhost2.example.ca
+
+# [aws_nodes]
+# [azure_nodes]
+# [baremetal_nodes]
+# [gcp_nodes]
+# [kvm_nodes]
+# [ocp_virt_nodes]
+# [openstack_nodes]
+# [vmware_nodes]
